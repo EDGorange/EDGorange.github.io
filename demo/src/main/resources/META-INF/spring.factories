@@ -1,0 +1,47 @@
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.example.demo.autoConfig.SpringContextRunListener
+# Auto Configure
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+#com.ztesoft.zsmart.core.boot.autoconfigure.actuate.metric.AdvancedTomcatMetricsAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.druid.DruidDataSourceAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.transaction.TransactionAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.cache.RedisCacheAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.mybatis.MyBatisAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.mybatis.MyBatisGlobalConfigAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.CoreJdbcTemplateAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.SqlGlobalConfigAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.log.ServiceLogAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.RestAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.ExporterHttpMessageConverterAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.DruidWebAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.actuate.ManagementAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.i18n.I18nAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.common.ProjectAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.actuate.CoreEndpointAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.metrics.DataSourceMetricsAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.monitor.DataSourceMonitorAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.mq.MQAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.service.ServiceAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.security.CoreEncryptionBootstrapConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.security.SecurityAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.NbrTraceAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.CoreWebMvcAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.JacksonAutoConfiguration,\
+#org.springframework.boot.actuate.autoconfigure.CustomManagementWebSecurityAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.TrackingLogAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.web.AuditLogAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.sync.SyncSqlAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.UdalApiServiceAutoConfiguration,\
+#com.ztesoft.zsmart.core.boot.autoconfigure.http.RestTemplateAutoConfiguration
+
+# Environment Post Processors
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.example.demo.postProcessor.CoreI18nEnvironmentPostProcessor
+#com.ztesoft.zsmart.core.boot.autoconfigure.listener.CoreConfigFileEnvironmentPostProcessor
+
+#org.springframework.boot.actuate.autoconfigure.web.ManagementContextConfiguration=\
+#com.ztesoft.zsmart.core.boot.autoconfigure.jdbc.DruidWebManagementConfiguration
+#
+#org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+#com.ztesoft.zsmart.core.boot.autoconfigure.security.CoreEncryptionBootstrapConfiguration

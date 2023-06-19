@@ -1,6 +1,7 @@
 package com.example.demo.deepCopy;
 
 import org.apache.commons.lang.SerializationUtils;
+import org.springframework.beans.BeanUtils;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -47,15 +48,53 @@ class Address implements Serializable {
         this.streetName = streetName;
         this.streetNumber = streetNumber;
     }
+
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", streetName='" + streetName + '\'' +
+                ", streetNumber=" + streetNumber +
+                '}';
+    }
 }
 
 class Employee implements Serializable {
+
     public String name;
     public Address address;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Employee(String name, Address address) {
         this.name = name;
         this.address = address;
+    }
+
+    public Employee() {
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", address=" + address +
+                '}';
     }
 }
 
@@ -66,6 +105,8 @@ public class DeepCloneDemo {
 
         Employee clonedEmployee = (Employee) SerializationUtils.clone(originalEmployee);
         clonedEmployee.address.streetNumber = 200;
+        System.out.println(clonedEmployee);
+        System.out.println(originalEmployee);
 
         HashMap<String, Integer> stringIntegerHashMap = new HashMap<>();
         stringIntegerHashMap.put("1", 1);
@@ -88,5 +129,23 @@ public class DeepCloneDemo {
         System.out.println("Cloned employee: " + clonedEmployee.address.streetNumber);
         System.out.println(Optional.ofNullable(address).map(Address::getCity).get());
         System.out.println(Optional.ofNullable(address).map(Address::getCity).orElse("nihao"));
+
+        System.out.println("----------------------------------");
+        HashMap<String, Integer> stringIntegerHashMap1 = new HashMap<>();
+        BeanUtils.copyProperties(stringIntegerHashMap, stringIntegerHashMap1);
+        //true
+        System.out.println(stringIntegerHashMap1.isEmpty());
+        for (Map.Entry<String, Integer> stringIntegerEntry : stringIntegerHashMap1.entrySet()) {
+            System.out.println("new Map--"+stringIntegerEntry.getKey());
+            System.out.println("new Map--"+stringIntegerEntry.getValue());
+        }
+        System.out.println("=====================================");
+        Employee clonedEmployee1 = new Employee();
+        BeanUtils.copyProperties(originalEmployee, clonedEmployee1);
+        clonedEmployee1.getAddress().setStreetNumber(600);
+        clonedEmployee1.setName("hjh");
+        System.out.println(clonedEmployee1);
+        System.out.println(originalEmployee);
+        System.out.println(clonedEmployee);
     }
 }
